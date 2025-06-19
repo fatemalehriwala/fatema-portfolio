@@ -89,6 +89,19 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
 }
+@media (max-width: 768px) {
+  .logo span {
+    display: none; /* hide name on small screen */
+  }
+
+  .logo-icon {
+    font-size: 1.5rem; /* shrink icon if needed */
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}
 
 /* --- Navbar --- */
 #desktop-nav {
@@ -143,6 +156,38 @@ body {
   color: var(--primary-color);
   border-bottom: 2px solid var(--primary-color);
   transform: translateY(-2px);
+}
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    display: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
 }
 
 /* --- Hero Section --- */

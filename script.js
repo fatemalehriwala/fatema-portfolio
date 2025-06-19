@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const profileImg = document.getElementById("about-img");
   const nav = document.getElementById("desktop-nav");
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.querySelector(".nav-links");
 
   // Click interaction on profile image
   if (profileImg) {
     profileImg.style.cursor = "pointer";
     profileImg.title = "Click to say Hi!";
-
     profileImg.addEventListener("click", () => {
       const messages = [
         "Hi there! 👋 Thanks for checking out my profile.",
         "Hope you're having a great day! ☀️",
-        "I'm currently open to new opportunities — let's connect! 🤝"
+        "I'm currently open to new opportunities — let's connect! 🤝",
       ];
       const randomMsg = messages[Math.floor(Math.random() * messages.length)];
       alert(randomMsg);
@@ -25,6 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.style.backgroundColor = window.scrollY > 50 ? "#f0fdf4" : "#ffffff";
     }
   });
+
+  // Hamburger menu toggle
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
 
   // Toggle skill card expansion
   window.toggleSkill = function (card) {
